@@ -1,0 +1,210 @@
+/* ==========================================================================
+   PortfolioPage.css
+   Styles for the "Recent Projects" portfolio section.
+   Built on top of Bootstrap 5 (grid + utility classes are used in the JSX;
+   this file only contains the custom visual design layer).
+   ========================================================================== */
+
+:root {
+  --portfolio-bg: #0d1226;
+  --card-bg: #131a36;
+  --card-border-blue: #3b82f6;
+  --card-border-red: #ef4444;
+  --text-primary: #f5f7ff;
+  --text-secondary: #a9b1d6;
+  --tag-bg: #1f2a52;
+  --tag-text: #c7d2fe;
+  --btn-github-from: #6366f1;
+  --btn-github-to: #3b82f6;
+  --btn-demo-from: #3b82f6;
+  --btn-demo-to: #ef4444;
+}
+
+/* ---------- Section wrapper ---------- */
+.portfolio-section {
+  background-color: var(--portfolio-bg);
+  padding: 5rem 1rem;
+  color: var(--text-primary);
+  margin-top: 100px;
+}
+
+.portfolio-header {
+  margin-bottom: 3rem;
+}
+
+.portfolio-title {
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.portfolio-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ---------- Card ---------- */
+.project-card {
+  background-color: var(--card-bg);
+  border-radius: 1.25rem;
+  border: 1px solid var(--card-border-blue);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(59, 130, 246, 0.25);
+}
+
+/* Alternate accent border (mimics red/blue alternating outline from design) */
+.project-card-image-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: #0a0f24;
+}
+
+.project-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.project-card-desc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+/* ---------- Tags ---------- */
+.project-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-tag {
+  background-color: var(--tag-bg);
+  color: var(--tag-text);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* ---------- Action buttons ---------- */
+.project-card-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.project-btn {
+  flex: 1 1 auto;
+  min-width: 120px;
+  text-align: center;
+  border-radius: 999px;
+  padding: 0.6rem 1.1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #fff !important;
+  border: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.project-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+.btn-arrow {
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.project-btn-github {
+  background: linear-gradient(
+    135deg,
+    var(--btn-github-from),
+    var(--btn-github-to)
+  );
+}
+
+.project-btn-demo {
+  background: linear-gradient(135deg, var(--btn-demo-from), var(--btn-demo-to));
+}
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 767.98px) {
+  .portfolio-title {
+    font-size: 2rem;
+  }
+
+  .project-card-actions {
+    flex-direction: column;
+  }
+
+  .project-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .portfolio-section {
+    padding: 3.5rem 0.75rem;
+  }
+
+  .project-card-body {
+    padding: 1.25rem;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-btn {
+    transition: none;
+  }
+
+  .project-card:hover {
+    transform: none;
+  }
+}
+
+/* ---------- Accessibility: visible keyboard focus ---------- */
+.project-btn:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}

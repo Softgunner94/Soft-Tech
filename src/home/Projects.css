@@ -1,0 +1,241 @@
+/* ============================================
+   Projects — tokens
+   ============================================ */
+:root {
+  --proj-bg-1: #1c1c22;
+  --proj-bg-2: #0b0b0e;
+  --proj-ink: #ffffff;
+  --proj-ink-soft: rgba(255, 255, 255, 0.75);
+  --proj-ring: rgba(255, 255, 255, 0.18);
+  --proj-accent: #7b83f0;
+  --proj-font-heading: "Georgia", "Times New Roman", serif;
+  --proj-font: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+/* ============================================
+   Section shell — dark diagonal gradient
+   ============================================ */
+.projects-section {
+  position: relative;
+  background: linear-gradient(125deg, var(--proj-bg-1) 0%, var(--proj-bg-2) 60%, #000 100%);
+  font-family: var(--proj-font);
+  padding: 5.5rem 0 6rem;
+  overflow: hidden;
+}
+
+.projects-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0.03) 0px,
+    rgba(255, 255, 255, 0.03) 2px,
+    transparent 2px,
+    transparent 60px
+  );
+  pointer-events: none;
+}
+
+/* ============================================
+   Header
+   ============================================ */
+.projects-section__header {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 4rem;
+}
+
+.projects-section__heading {
+  font-family: var(--proj-font-heading);
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--proj-ink);
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  line-height: 1;
+  margin-bottom: 1.6rem;
+}
+
+.projects-section__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  color: var(--proj-ink-soft);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.projects-section__cta:hover,
+.projects-section__cta:focus {
+  color: var(--proj-ink);
+}
+
+.projects-section__cta-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--proj-ink);
+  color: #0b0b0e;
+  transition: transform 220ms ease, background 220ms ease;
+}
+
+.projects-section__cta:hover .projects-section__cta-icon,
+.projects-section__cta:focus .projects-section__cta-icon {
+  transform: translateX(4px);
+  background: var(--proj-accent);
+  color: var(--proj-ink);
+}
+
+.projects-section__cta:focus-visible {
+  outline: 2px solid var(--proj-accent);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* ============================================
+   Rows / columns
+   ============================================ */
+.projects-section__row {
+  position: relative;
+  z-index: 1;
+  row-gap: 2.5rem;
+}
+
+.projects-section__row--bottom {
+  margin-top: 2.5rem;
+  justify-content: center;
+}
+
+.projects-section__col {
+  display: flex;
+  justify-content: center;
+}
+
+.projects-section__col--centered {
+  margin: 0 auto;
+}
+
+/* ============================================
+   Circular project image / link
+   ============================================ */
+.projects-section__circle {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px var(--proj-ring);
+  transition: box-shadow 280ms ease, transform 280ms ease;
+}
+
+.projects-section__circle:hover,
+.projects-section__circle:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: 0 0 0 2px var(--proj-accent), 0 20px 45px rgba(123, 131, 240, 0.35);
+}
+
+.projects-section__circle:focus-visible {
+  outline: none;
+}
+
+.projects-section__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 400ms ease;
+}
+
+.projects-section__circle:hover .projects-section__image {
+  transform: scale(1.08);
+}
+
+.projects-section__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(11, 11, 14, 0.55);
+  opacity: 0;
+  transition: opacity 280ms ease;
+}
+
+.projects-section__circle:hover .projects-section__overlay,
+.projects-section__circle:focus-visible .projects-section__overlay {
+  opacity: 1;
+}
+
+.projects-section__overlay-text {
+  flex-direction: row;
+  color: var(--proj-ink);
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-align: center;
+  padding: 0 1.5rem;
+}
+.projects-section__overlay-info {
+    flex-direction: row;
+    color: rgba(255, 255, 255, 0.75);
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0 1.5rem;
+    padding-top: 2rem;
+    font-family: monospace;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 991.98px) {
+  .projects-section {
+    padding: 4rem 0 4.5rem;
+  }
+
+  .projects-section__circle {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .projects-section__heading {
+    font-size: 2.6rem;
+  }
+
+  .projects-section__header {
+    margin-bottom: 3rem;
+  }
+
+  .projects-section__circle {
+    max-width: 260px;
+  }
+
+  .projects-section__row--bottom {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projects-section__circle,
+  .projects-section__image,
+  .projects-section__overlay,
+  .projects-section__cta-icon {
+    transition: none;
+  }
+
+  .projects-section__circle:hover {
+    transform: none;
+  }
+}

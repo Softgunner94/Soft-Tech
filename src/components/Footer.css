@@ -1,0 +1,72 @@
+/* =============================
+   Footer Styles
+   ============================= */
+
+.footer {
+  background-color: #0b1524;
+  width: 100%;
+  padding: 2.5rem 0;
+}
+
+/* Container: centres content and caps max-width */
+.footer__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Section wrapper: stacks children vertically and centres them */
+.footer__section-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* Social icons row */
+.footer__socials {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+/* Individual social link */
+.footer__social-link {
+  color: #a8b87a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.25s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.footer__social-link:hover,
+.footer__social-link:focus-visible {
+  color: #c8d99a;
+  transform: translateY(-2px);
+  outline: none;
+}
+
+/* Copyright text */
+.footer__copyright {
+  margin: 0;
+  color: #a8b87a;
+  font-size: 0.9rem;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+/* =============================
+   Responsive
+   ============================= */
+@media (max-width: 480px) {
+  .footer__socials {
+    gap: 1.5rem;
+  }
+
+  .footer__copyright {
+    font-size: 0.8rem;
+  }
+}

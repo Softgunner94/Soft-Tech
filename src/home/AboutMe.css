@@ -1,0 +1,173 @@
+/* ============================================
+   About Me — tokens
+   ============================================ */
+:root {
+  --about-bg: #ffffff;
+  --about-ink: #1b1d29;
+  --about-ink-soft: #7c84a3;
+  --about-violet: #7b83f0;
+  --about-blue: #4eb6f0;
+  --about-card-bg: #ffffff;
+  --about-card-shadow: 0 30px 60px -15px rgba(123, 131, 240, 0.18);
+  --about-font: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+/* ============================================
+   Section shell
+   ============================================ */
+.about-me {
+  background: #ffffff;
+  font-family: var(--about-font);
+  padding: 5rem 0;
+  
+}
+
+.about-me__row {
+  row-gap: 3.75rem;
+}
+
+
+/* ============================================
+   Image column / container
+   ============================================ */
+.about-me__image-col {
+  display: flex;
+  justify-content: center;
+
+
+}
+
+.about-me__image-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 420px;
+  aspect-ratio: 17 / 14;
+  background: var(--about-card-bg);
+  border-radius: 4px;
+  box-shadow: var(--about-card-shadow);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ object-fit: cover;
+ min-height: 500px;
+
+
+}
+
+.about-me__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* ============================================
+   Text column
+   ============================================ */
+.about-me__text-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+}
+
+.about-me__eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--about-violet);
+  margin-bottom: 0.85rem;
+}
+
+.about-me__title {
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--about-ink);
+  text-transform: uppercase;
+  line-height: 1.15;
+  margin-bottom: 1.4rem;
+  font-style: italic;
+}
+
+.about-me__description {
+  font-size: 1.25rem;
+  line-height: 1.75;
+  color: var(--about-ink);
+  max-width: 520px;
+  margin-bottom: 2rem;
+  font-weight: 200;
+}
+
+.about-me__cta {
+  background: linear-gradient(90deg, var(--about-violet), var(--about-blue));
+  border: none;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.9rem;
+  border-radius: 4px;
+  box-shadow: 0 10px 24px rgba(123, 131, 240, 0.3);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.about-me__cta:hover,
+.about-me__cta:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(123, 131, 240, 0.38);
+  color: #fff;
+}
+
+.about-me__cta:focus-visible {
+  outline: 3px solid rgba(123, 131, 240, 0.45);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 991.98px) {
+  .about-me {
+    padding: 3.5rem 0;
+  }
+
+  .about-me__text-col {
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-me__description {
+    max-width: 100%;
+  }
+
+  .about-me__image-card {
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .about-me__title {
+    font-size: 1.7rem;
+  }
+
+  .about-me__image-card {
+    max-width: 100%;
+  }
+
+  .about-me__cta {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-me__cta {
+    transition: none;
+  }
+}

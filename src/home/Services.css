@@ -1,0 +1,158 @@
+/* ============================================
+   Services — tokens
+   ============================================ */
+:root {
+  --svc-bg: #e9eaf2;
+  --svc-card-bg: #ffffff;
+  --svc-ink: #1b1d29;
+  --svc-ink-soft: #4f5470;
+  --svc-accent: #9aa86b;
+  --svc-link: #4861c9;
+  --svc-shadow: 0 6px 18px rgba(27, 29, 41, 0.06);
+  --svc-shadow-hover: 0 22px 40px rgba(27, 29, 41, 0.14);
+  --svc-font: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+/* ============================================
+   Section shell
+   ============================================ */
+.services {
+  background: var(--svc-bg);
+  font-family: var(--svc-font);
+  padding: 5rem 0;
+}
+
+.services__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3.25rem;
+}
+
+.services__heading {
+  font-size: clamp(1.9rem, 3.6vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--svc-ink);
+  margin-bottom: 0.7rem;
+}
+
+.services__heading-underline {
+  width: 64px;
+  height: 3px;
+  background: var(--svc-accent);
+  border-radius: 2px;
+}
+
+/* ============================================
+   Cards
+   ============================================ */
+.services__row {
+  row-gap: 1.75rem;
+}
+
+.services__col {
+  display: flex;
+}
+
+.services__card {
+  width: 100%;
+  background: var(--svc-card-bg);
+  border-radius: 6px;
+  box-shadow: var(--svc-shadow);
+  padding: 2.75rem 2rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 260ms ease, box-shadow 260ms ease;
+  will-change: transform;
+}
+
+.services__card:hover,
+.services__card:focus-within {
+  transform: translateY(-8px);
+  box-shadow: var(--svc-shadow-hover);
+}
+
+.services__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--svc-ink);
+  margin-bottom: 0.9rem;
+  transition: color 220ms ease, transform 260ms ease;
+}
+
+.services__card:hover .services__icon {
+  color: var(--svc-link);
+  transform: scale(1.08);
+}
+
+.services__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--svc-ink);
+  margin-bottom: 0.55rem;
+}
+
+.services__title-underline {
+  width: 34px;
+  height: 2px;
+  background: var(--svc-accent);
+  border-radius: 2px;
+  margin-bottom: 1.4rem;
+  transition: width 260ms ease;
+}
+
+.services__card:hover .services__title-underline {
+  width: 52px;
+}
+
+.services__description {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--svc-ink-soft);
+  margin: 0;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 991.98px) {
+  .services {
+    padding: 3.5rem 0;
+  }
+
+  .services__card {
+    padding: 2.4rem 1.6rem 2rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .services__heading {
+    font-size: 1.7rem;
+  }
+
+  .services__card:hover
+  .services__cared:focus {
+    transform: translateY(-4px);
+    opacity: 0.8;
+   
+    
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services__card,
+  .services__icon,
+  .services__title-underline {
+    transition: none;
+  }
+
+  .services__card:hover {
+    transform: none;
+  }
+}

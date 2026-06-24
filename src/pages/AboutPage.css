@@ -1,0 +1,161 @@
+/* ==========================================================================
+   AboutPage.css
+   Styles for the "About Me" section.
+   Built on top of Bootstrap 5 (grid + utility classes are used in the JSX;
+   this file only contains the custom visual design layer).
+   Color tokens match the PortfolioPage section for visual consistency.
+   ========================================================================== */
+
+:root {
+  --about-bg: #0d1226;
+  --about-text-primary: #f5f7ff;
+  --about-text-secondary: #c3c9e6;
+  --about-btn-from: #3b82f6;
+  --about-btn-to: #ef4444;
+}
+
+/* ---------- Section wrapper ---------- */
+.about-section {
+  background-color: var(--about-bg);
+  padding: 5rem 1rem;
+  color: var(--about-text-primary);
+  margin-top: 100px;
+}
+
+/* ---------- Image ---------- */
+.about-image-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background-color: #0a0f24;
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+  display: block;
+  margin-top: 2px;
+  max-height: 800px;
+}
+
+/* ---------- Text content ---------- */
+.about-title {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--about-text-primary);
+}
+
+.about-paragraph {
+  color: var(--about-text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+/* ---------- Resume button ---------- */
+.about-resume-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: linear-gradient(
+    135deg,
+    var(--about-btn-from),
+    var(--about-btn-to)
+  );
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  border: none;
+  text-decoration: none;
+  margin-top: 0.5rem;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.about-resume-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+.resume-icon {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 991.98px) {
+  .about-image-wrap {
+    max-width: 480px;
+    margin: 0 auto 1rem;
+    aspect-ratio: 1 / 1;
+  }
+
+  .about-title {
+    text-align: center;
+  }
+
+  .about-paragraph {
+    text-align: center;
+  }
+
+  .about-resume-btn {
+    display: flex;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 575.98px) {
+ 
+  .about-title {
+    text-align: center;
+  }
+
+  .about-paragraph {
+    text-align: center;
+  }
+
+  .about-image {
+  width: 100%;
+  height: 100%;
+  object-fit:contain;
+}
+}
+
+@media (max-width: 575.98px) {
+  .about-section {
+    padding: 3.5rem 0.75rem;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit:contain;
+ 
+}
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .about-resume-btn {
+    transition: none;
+  }
+
+  .about-resume-btn:hover {
+    transform: none;
+  }
+}
+
+/* ---------- Accessibility: visible keyboard focus ---------- */
+.about-resume-btn:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}

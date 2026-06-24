@@ -1,0 +1,205 @@
+/* =============================================
+   MySkills Section Styles
+   ============================================= */
+
+/* Section root */
+.myskills {
+  background: linear-gradient(145deg, #0a0e2a 0%, #0d1b6e 55%, #091230 100%);
+  padding: 5rem 0 4rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Container override — full-width with inner padding */
+.myskills__container {
+  width: 100%;
+  padding: 0 2.5rem;
+}
+
+/* Section wrapper — content card */
+.myskills__section-wrapper {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  backdrop-filter: blur(6px);
+}
+
+/* ── Header ─────────────────────────────────── */
+.myskills__eyebrow {
+  display: block;
+  font-size: 0.85rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.myskills__heading {
+  font-size: clamp(1.7rem, 3.5vw, 2.5rem);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.myskills__desc-col {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 0.25rem;
+}
+
+.myskills__desc {
+  font-size: 0.9rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.7;
+  text-align: right;
+  margin: 0;
+}
+
+/* ── Logo bubbles ─────────────────────────── */
+.myskills__logos-row {
+  padding: 1rem 0;
+}
+
+.myskills__logo-bubble {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 140px;
+  height: 170px;
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50% / 45%;
+  background: rgba(255, 255, 255, 0.05);
+  cursor: default;
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.2s ease;
+}
+
+.myskills__logo-bubble:hover {
+  border-color: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-4px);
+}
+
+.myskills__logo-label {
+  font-size: 0.72rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+
+/* ── Skill bars ─────────────────────────────── */
+.myskills__bars-row {
+  margin-top: 0.5rem;
+}
+
+.myskills__skill-item {
+  margin-bottom: 1.6rem;
+}
+
+.myskills__skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.55rem;
+}
+
+.myskills__skill-name {
+  font-size: 0.9rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.myskills__skill-pct {
+  font-size: 0.9rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* Custom track */
+.myskills__track {
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 2px;
+  position: relative;
+}
+
+/* Filled portion */
+.myskills__fill {
+  height: 100%;
+  background: #ffffff;
+  border-radius: 2px;
+  position: relative;
+  transition: width 0.6s ease;
+}
+
+/* Thumb dot at the end of fill */
+.myskills__thumb {
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background: #ffffff;
+  border-radius: 50%;
+  border: 2px solid #1a2a8a;
+}
+
+/* ── Tool badges ────────────────────────────── */
+.myskills__badges {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+
+.myskills__badge {
+  font-size: 0.8rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 0.3rem 0.9rem;
+  letter-spacing: 0.03em;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.myskills__badge:hover {
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #ffffff;
+}
+
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 768px) {
+  .myskills {
+    padding: 3rem 0;
+  }
+
+  .myskills__container {
+    padding: 0 1rem;
+  }
+
+  .myskills__section-wrapper {
+    padding: 2rem 1.25rem;
+  }
+
+  .myskills__desc {
+    text-align: left;
+  }
+
+  .myskills__logo-bubble {
+    width: 110px;
+    height: 135px;
+  }
+}

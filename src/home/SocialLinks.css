@@ -1,0 +1,114 @@
+/* ============================================
+   Social Links — tokens
+   ============================================ */
+:root {
+  --social-bg: #e9eaf2;
+  --social-icon-bg: #ffffff;
+  --social-ink: #1f2433;
+  --social-shadow: 0 4px 10px rgba(27, 29, 41, 0.06);
+  --social-shadow-hover: 0 12px 22px rgba(27, 29, 41, 0.16);
+
+  --social-facebook: #1877f2;
+  --social-instagram: #d6249f;
+  --social-twitter: #1da1f2;
+  --social-linkedin: #0a66c2;
+  --social-whatsapp: #25d366;
+  --social-tiktok: #1f2433;
+}
+
+/* ============================================
+   Section shell
+   ============================================ */
+.social-links {
+ 
+  padding: 2.5rem 0;
+}
+
+.social-links__container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.social-links__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================
+   Icon button
+   ============================================ */
+.social-links__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 8px;
+  background: var(--social-icon-bg);
+  color: var(--social-ink);
+  font-size: 1.1rem;
+  box-shadow: var(--social-shadow);
+  transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease, color 200ms ease;
+  text-decoration: none;
+}
+
+.social-links__icon:hover,
+.social-links__icon:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: var(--social-shadow-hover);
+  color: #ffffff;
+}
+
+.social-links__icon:focus-visible {
+  outline: 3px solid rgba(31, 36, 51, 0.3);
+  outline-offset: 2px;
+}
+
+/* Brand-color fills on hover */
+.social-links__icon--facebook:hover { background: var(--social-facebook); }
+.social-links__icon--instagram:hover {
+  background: radial-gradient(circle at 30% 110%, #fdf497, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+}
+.social-links__icon--twitter:hover { background: var(--social-twitter); }
+.social-links__icon--linkedin:hover { background: var(--social-linkedin); }
+.social-links__icon--whatsapp:hover { background: var(--social-whatsapp); }
+.social-links__icon--tiktok:hover { background: var(--social-tiktok); }
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 575.98px) {
+  .social-links {
+    padding: 1.75rem 0;
+  }
+
+  .social-links__list {
+    gap: 0.85rem;
+  }
+
+  .social-links__icon {
+    width: 42px;
+    height: 42px;
+    font-size: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-links__icon {
+    transition: none;
+  }
+
+  .social-links__icon:hover,
+  .social-links__icon:focus-visible {
+    transform: none;
+  }
+}

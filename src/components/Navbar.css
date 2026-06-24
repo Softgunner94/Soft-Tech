@@ -1,0 +1,289 @@
+/* ============================================
+   Site Navbar — tokens
+   ============================================ */
+:root {
+  --nav-bg: #ffffff;
+  --nav-ink: #1c1f2b;
+  --nav-ink-soft: #51566b;
+  --nav-accent: #6f7bf7;
+  --nav-accent-dim: #aab1fb;
+  --nav-border: rgba(28, 31, 43, 0.07);
+  --nav-shadow: 0 8px 24px rgba(28, 31, 43, 0.07);
+  --nav-radius: 10px;
+  --nav-height: 76px;
+  --nav-font: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+/* ============================================
+   Shell
+   ============================================ */
+.site-navbar {
+  background: var(--nav-bg);
+  font-family: var(--nav-font);
+  min-height: var(--nav-height);
+  border-bottom: 1px solid transparent;
+  transition: box-shadow 220ms ease, border-color 220ms ease, min-height 220ms ease;
+  padding: 0;
+  z-index: 1030;
+  background-color: #071A3D;
+}
+
+.site-navbar--scrolled {
+  box-shadow: var(--nav-shadow);
+  border-bottom-color: var(--nav-border);
+  min-height: 64px;
+}
+
+.site-navbar__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1240px;
+ 
+}
+
+/* ============================================
+   Brand / logo mark
+   ============================================ */
+.site-navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0;
+  font-weight: 800;
+}
+
+.site-navbar__mark {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+}
+
+.site-navbar__diamond {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  background: var(--nav-accent);
+  transform: rotate(45deg);
+}
+
+.site-navbar__diamond--1 {
+  top: 0;
+  left: 9px;
+  opacity: 1;
+}
+
+.site-navbar__diamond--2 {
+  top: 17px;
+  left: 0;
+  background: var(--nav-accent-dim);
+}
+
+.site-navbar__diamond--3 {
+  top: 17px;
+  left: 18px;
+  background: var(--nav-accent-dim);
+}
+
+
+/* ============================================
+   Nav links
+   ============================================ */
+.site-navbar__nav {
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.site-navbar__link {
+  position: relative;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--nav-accent-dim) !important;
+  padding: 1.6rem 0.9rem !important;
+  transition: color 160ms ease;
+}
+
+.site-navbar__link::after {
+  content: "";
+  position: absolute;
+  left: 0.9rem;
+  right: 0.9rem;
+  bottom: 1.1rem;
+  height: 2px;
+  background: var(--nav-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 200ms ease;
+}
+
+.site-navbar__link:hover,
+.site-navbar__link:focus-visible {
+  color: var(--nav-ink) !important;
+}
+
+.site-navbar__link:hover::after {
+  transform: scaleX(1);
+}
+
+.site-navbar__link.active {
+  color: var(--nav-accent) !important;
+}
+
+.site-navbar__link.active::after {
+  transform: scaleX(1);
+}
+
+.site-navbar__link--contact {
+  color: var(--nav-accent-dim) !important;
+}
+
+/* ============================================
+   Dropdowns (Blog / Pages)
+   ============================================ */
+.site-navbar__dropdown .dropdown-toggle {
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--nav-ink-soft) !important;
+  padding: 1.6rem 0.9rem !important;
+}
+
+.site-navbar__dropdown .dropdown-toggle:hover,
+.site-navbar__dropdown .dropdown-toggle:focus {
+  color: var(--nav-ink) !important;
+}
+
+.site-navbar__dropdown .dropdown-toggle::after {
+  vertical-align: 0.18em;
+  border-top-color: currentColor;
+  opacity: 0.6;
+}
+
+.site-navbar__dropdown .dropdown-menu {
+  border: none;
+  border-radius: var(--nav-radius);
+  box-shadow: 0 16px 36px rgba(28, 31, 43, 0.14);
+  padding: 0.5rem;
+  margin-top: 0.4rem;
+  min-width: 200px;
+}
+
+.site-navbar__dropdown-item {
+  border-radius: 6px;
+  padding: 0.55rem 0.85rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--nav-ink-soft);
+  transition: background 140ms ease, color 140ms ease;
+}
+
+.site-navbar__dropdown-item:hover,
+.site-navbar__dropdown-item:focus {
+  background: rgba(111, 123, 247, 0.1);
+  color: var(--nav-accent);
+}
+
+.site-navbar__dropdown-item.active {
+  background: var(--nav-accent);
+  color: #fff;
+}
+
+/* ============================================
+   Toggle button (mobile burger)
+   ============================================ */
+.site-navbar__toggle {
+  border: none;
+  padding: 0.4rem;
+}
+
+.site-navbar__toggle:focus {
+  box-shadow: 0 0 0 3px rgba(111, 123, 247, 0.25);
+}
+
+.site-navbar__burger {
+  display: block;
+  position: relative;
+  width: 24px;
+  height: 2px;
+  background: var(--nav-accent);
+}
+
+.site-navbar__burger::before,
+.site-navbar__burger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: var(--nav-ink);
+}
+
+.site-navbar__burger::before {
+  top: -7px;
+}
+
+.site-navbar__burger::after {
+  top: 7px;
+}
+
+/* ============================================
+   Responsive: tablet / mobile collapse
+   ============================================ */
+@media (max-width: 991.98px) {
+  .site-navbar__collapse {
+    background: var(--nav-bg);
+    margin-top: 0.5rem;
+    border-top: 1px solid var(--nav-border);
+    max-height: calc(100vh - var(--nav-height));
+    overflow-y: auto;
+  }
+
+  .site-navbar__nav {
+    align-items: stretch;
+    padding: 0.5rem 0 1rem;
+  }
+
+  .site-navbar__link,
+  .site-navbar__dropdown .dropdown-toggle {
+    padding: 0.85rem 0.25rem !important;
+    text-align: left;
+  }
+
+  .site-navbar__link::after {
+    display: none;
+  }
+
+  .site-navbar__link.active,
+  .site-navbar__dropdown .dropdown-toggle.active {
+    background: rgba(111, 123, 247, 0.08);
+    border-radius: 6px;
+    padding-left: 0.6rem !important;
+  }
+
+  .site-navbar__dropdown .dropdown-menu {
+    box-shadow: none;
+    background: rgba(28, 31, 43, 0.025);
+    margin: 0.2rem 0 0.4rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .site-navbar__collapse {
+    justify-content: flex-end;
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .site-navbar,
+  .site-navbar__link,
+  .site-navbar__link::after,
+  .site-navbar__dropdown-item {
+    transition: none;
+  }
+}

@@ -1,0 +1,222 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/* ============================================
+   Hero — tokens
+   ============================================ */
+:root {
+  --hero-bg: #f4f4fb;
+  --hero-ink: #1b1d29;
+  --hero-ink-soft: #5d6072;
+  --hero-violet: #7b83f0;
+  --hero-blue: #4eb6f0;
+  --hero-tag-bg: #7b83f0;
+  --hero-font: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+/* ============================================
+   Section shell
+   ============================================ */
+
+
+.hero {
+  background: var(--hero-bg);
+  font-family: var(--hero-font);
+  padding: 5rem 0;
+  overflow: hidden;
+  border-top: 10px;
+  margin-top: 80px;
+}
+
+.hero__row {
+  row-gap: 3rem;
+}
+
+/* ============================================
+   Text column
+   ============================================ */
+.hero__text-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero__eyebrow {
+  display: inline-block;
+  background: var(--hero-ink-soft);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.7rem;
+  border-radius: 3px;
+  margin-bottom: 1.1rem;
+  font-family:cursive;
+}
+
+.hero__title {
+  font-size: clamp(1.11rem, 2vw, 1.91rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--hero-ink);
+  text-transform: uppercase;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  font-family:monospace;
+
+}
+
+.hero__description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--hero-ink-soft);
+  max-width: 480px;
+  margin-bottom: 2rem;
+  font-weight: 900;
+  text-shadow: #4eb6f0;
+  font-family:fantasy;
+}
+
+.hero__cta {
+  background: linear-gradient(90deg, var(--hero-violet), var(--hero-ink));
+  border: none;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  padding: 0.35rem 1.0rem;
+  border-radius: 4px;
+  box-shadow: 0 10px 24px rgba(123, 131, 240, 0.3);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.hero__cta:hover,
+.hero__cta:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(123, 131, 240, 0.38);
+  color: #fff;
+}
+
+.hero__cta:focus-visible {
+  outline: 3px solid rgba(123, 131, 240, 0.45);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   Image column — layered frame + glow + dots
+   ============================================ */
+.hero__image-col {
+  display: flex;
+  justify-content: center;
+}
+
+.hero__art {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 23 / 26;
+}
+
+.hero__glow {
+  position: absolute;
+  inset: -6%;
+  background: radial-gradient(
+    closest-side,
+    rgba(123, 131, 240, 0.35),
+    rgba(123, 131, 240, 0) 70%
+  );
+  filter: blur(10px);
+  z-index: 0;
+}
+
+.hero__frame {
+  position: absolute;
+  top: 8%;
+  left: 0;
+  width: 92%;
+  height: 84%;
+  background: linear-gradient(155deg, var(--hero-violet), var(--hero-blue));
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.hero__dots {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.hero__dot {
+  fill: var(--hero-violet);
+  opacity: 0.85;
+}
+
+.hero__dot--sm {
+  fill: var(--hero-blue);
+}
+
+.hero__dot--md {
+  fill: var(--hero-violet);
+  opacity: 0.7;
+}
+
+.hero__image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 90%;
+  height: 96%;
+  object-fit: cover;
+  object-position: top center;
+  z-index: 3;
+  border-style:groove;
+  border-radius: 20px;
+
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 991.98px) {
+  .hero {
+    padding: 3.5rem 0;
+  }
+
+  .hero__text-col {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero__description {
+    max-width: 100%;
+  }
+
+  .hero__art {
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .hero__art {
+    max-width: 280px;
+  }
+
+  .hero__cta {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__cta {
+    transition: none;
+  }
+}
