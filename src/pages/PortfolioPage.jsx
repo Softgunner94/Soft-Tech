@@ -58,7 +58,7 @@ const projects = [
     tags: ["React", "Node.js", "CSS", "Vite"],
     image: "/portfolio.png",
     githubUrl: GITHUB_PROFILE_URL,
-    liveDemoUrl: "https://your-blog-platform-demo.example.com",
+    liveDemoUrl: "https://soft-tech-hazel.vercel.app/",
   },
 ];
 
