@@ -123,7 +123,7 @@ export default function PortfolioPage() {
           <h2 className="portfolio-title">Recent Projects</h2>
           <p className="portfolio-subtitle">
             Here are some of the real-world projects I've built using the
-            MERN stack.
+            React and Javascript.
           </p>
         </div>
 
