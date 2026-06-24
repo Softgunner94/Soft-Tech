@@ -17,7 +17,7 @@ import "./PortfolioPage.css";
  */
 
 // ---- Replace this with your real GitHub profile URL ----
-const GITHUB_PROFILE_URL = "https://github.com/your-username";
+const GITHUB_PROFILE_URL = "https://github.com/Softgunner94";
 
 const projects = [
   {
@@ -48,7 +48,7 @@ const projects = [
     tags: ["React", "Node.js", "REST API", "JavaScript (ES6+)"],
     image: "/portfolio.png",
     githubUrl: GITHUB_PROFILE_URL,
-    liveDemoUrl: "https://your-chat-app-demo.example.com",
+    liveDemoUrl: "#",
   },
   {
     id: 4,
@@ -58,7 +58,7 @@ const projects = [
     tags: ["React", "Node.js", "CSS", "Vite"],
     image: "/portfolio.png",
     githubUrl: GITHUB_PROFILE_URL,
-    liveDemoUrl: "https://soft-tech-hazel.vercel.app/",
+    liveDemoUrl: "https://soft-tech-hazel.vercel.app",
   },
 ];
 
